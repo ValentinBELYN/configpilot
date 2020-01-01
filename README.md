@@ -1,9 +1,10 @@
-# ConfigPilot
-
-ConfigPilot is a lightweight and powerful configuration parser for Python that automates checks and typecasting.<br>
-Do everything you did in fewer lines of code!
-
-This module focuses on reading configuration files. It was not designed to write them. Other more suitable formats such as JSON can persist your application data.
+<div align="center">
+  <br><br>
+  <img src="media/configpilot-logo.png" height="80" width="185" alt="ConfigPilot">
+  <br><br>
+  <p>ConfigPilot is a lightweight and powerful configuration parser for Python that automates checks and typecasting.<br>Do everything you did in fewer lines of code!</p>
+  <br>
+</div>
 
 ## Features
 - Simple and concise syntax.
@@ -49,11 +50,11 @@ from configpilot import ConfigPilotError, NoSectionError, \
 ```
 *Quotes are optional for strings (unless you put special characters).*
 
-What we want:
-- The `name` must be a string.
-- The `age` must be an integer between `0` and `100`.
-- The `github` option must be a string.
-- The `skills` option must be a list of strings.
+For this first example, we want to retrieve:
+- The `name` as a string.
+- The `age` as an integer between `0` and `100`.
+- The `github` option as a string.
+- The `skills` as a list of strings.
 
 To achieve this, we have to:
 - Define the desired file structure.
@@ -132,13 +133,13 @@ skills = config['author']['skills']
              10.0.0.3
 ```
 
-What we want:
-- The `mode` option must be a string. Two values will be possible: `master` or `slave`.
-- The `interface` must be a string. If the option is not specified, we will use the default value `ens33`.
-- The `port` must be an integer between `1024` and `49151`. The default value will be `4000`.
-- The `initDelay` option must be a float. The default value will be `0.0`.
-- The `enabled` option, from the `logging` section, must be a boolean.
-- The `slaves` option, from the `nodes` section, must be a list of `IPv4Address` (from the `ipaddress` module).
+What we want to retrieve:
+- The `mode` option as a string. Two values will be possible: `master` or `slave`.
+- The `interface` as a string. If the option is not specified, we will use the default value `ens33`.
+- The `port` as an integer between `1024` and `49151`. The default value will be `4000`.
+- The `initDelay` option as a float. The default value will be `0.0`.
+- The `enabled` option, from the `logging` section, as a boolean.
+- The `slaves`, from the `nodes` section, as a list of `IPv4Address` (from the `ipaddress` module).
 
 #### Python code
 ```python
@@ -218,12 +219,12 @@ slaves = config.nodes.slaves           # [IPv4Address('10.0.0.1'),
  lastCrash:  2019-12-10 09:00:00
 ```
 
-What we want:
-- The `hexCode` option must be an integer (base 16).
-- The `lastBoot` option must be a `datetime` object.
-- The `lastCrash` option must be a `datetime` object.
+What we want to retrieve:
+- The `hexCode` option as an integer (base 16).
+- The `lastBoot` option as a `datetime` object.
+- The `lastCrash` option as a `datetime` object.
 
-We cannot set the `type` parameter of the `OptionSpec` object to `datetime` because the constructor of `datetime` expects several parameters. The value contained in the configuration file is a string with a specific format. So, we have to process this data with a dedicated function.
+We cannot set the `type` parameter of the `OptionSpec` objects to `datetime` because the constructor of `datetime` expects several parameters. The value contained in the configuration file is a string with a specific format. So, we have to process this data with a dedicated function.
 
 #### Python code
 ```python
@@ -377,6 +378,6 @@ ConfigPilot is completely free and open source. It has been fully developed on m
 
 ## License
 
-Copyright 2017-2019 Valentin BELYN.
+Copyright 2017-2020 Valentin BELYN.
 
 Code released under the MIT license. See the [LICENSE](LICENSE) for details.
