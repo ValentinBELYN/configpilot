@@ -224,7 +224,7 @@ What we want to retrieve:
 - The `lastBoot` option as a `datetime` object.
 - The `lastCrash` option as a `datetime` object.
 
-We cannot set the `type` parameter of the `OptionSpec` objects to `datetime` because the constructor of `datetime` expects several parameters. The value contained in the configuration file is a string with a specific format. So, we have to process this data with a dedicated function.
+We cannot set the `type` parameter of the `OptionSpec` objects to `datetime` because the constructor of `datetime` expects several parameters. The values contained in the configuration file are strings with a specific format. So, we have to process these data with a dedicated function.
 
 #### Python code
 ```python
