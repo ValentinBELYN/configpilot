@@ -4,7 +4,7 @@
 
         https://github.com/ValentinBELYN/configpilot
 
-    :copyright: Copyright 2017-2019 Valentin BELYN.
+    :copyright: Copyright 2017-2020 Valentin BELYN.
     :license: MIT, see the LICENSE for details.
 
     ~~~~~~~~~~~
