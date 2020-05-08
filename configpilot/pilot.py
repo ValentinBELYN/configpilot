@@ -224,7 +224,7 @@ class ConfigPilot:
 
             # If no option is provided in the file and a default value
             # is set, we use this value.
-            elif spec.default:
+            elif spec.default is not None:
                 casted_value = spec.default
 
             # If no option is provided and no default value is defined,
