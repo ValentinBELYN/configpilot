@@ -223,12 +223,16 @@ class INIParser:
 
         return config
 
-    def read(self, filename):
+    def read(self, filename, encoding='utf-8'):
         '''
         Read and parse a configuration file.
 
         :type filename: str
         :param filename: The path of the file to read.
+
+        :type encoding: str
+        :param encoding: (Optional) The name of the encoding used to
+            decode the file. The default encoding is UTF-8.
 
         :raises OSError: If the file cannot be opened.
         :raises ParseError: If the file does not have a valid
@@ -238,7 +242,7 @@ class INIParser:
         self._filename = filename
         self._config = {}
 
-        with open(filename) as file:
+        with open(filename, encoding=encoding) as file:
             lines = file.readlines()
 
         self._config = self._parse_lines(lines)

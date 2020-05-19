@@ -174,10 +174,21 @@ class ConfigPilot:
         '''
         self._specifications.extend(specifications)
 
-    def read(self, filename):
+    def read(self, filename, encoding='utf-8'):
         '''
         Read and parse a configuration file according to the registered
         specifications.
+
+        :type filename: str
+        :param filename: The path of the file to read.
+
+        :type encoding: str
+        :param encoding: (Optional) The name of the encoding used to
+            decode the file. The default encoding is UTF-8.
+
+        :rtype: bool
+        :returns: A boolean that indicates whether the file is opened
+            or not.
 
         '''
         parser = INIParser()
@@ -187,7 +198,7 @@ class ConfigPilot:
         self._errors = {}
 
         try:
-            parser.read(filename)
+            parser.read(filename, encoding)
 
         except (OSError, ParseError):
             return self._is_opened
