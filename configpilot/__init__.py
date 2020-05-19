@@ -40,7 +40,7 @@ __copyright__ = 'Copyright 2017-2020 Valentin BELYN'
 __license__   = 'MIT License'
 
 __version__   = '1.0.2'
-__build__     = '200510'
+__build__     = '200519'
 
 
 __all__ = [

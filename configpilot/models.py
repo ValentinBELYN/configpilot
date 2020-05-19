@@ -69,9 +69,6 @@ class Section:
         if name[:2] == '__':
             return super().__getattr__(name)
 
-        if name[-1] == '_':
-            name = name[:-1]
-
         return self[name]
 
     def __getitem__(self, key):
