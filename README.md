@@ -339,11 +339,12 @@ ConfigPilot()
 
   - `*specifications` parameter: one or several `OptionSpec`.
 
-- `read(filename)`
+- `read(filename, encoding='utf-8')`
 
   Read and parse a configuration file according to the registered specifications.
 
   - `filename` parameter: the name of the configuration file to read.
+  - `encoding` parameter: the name of the encoding used to decode the file. The default encoding is `UTF-8`.
 
 #### Getters
 - `filename`
